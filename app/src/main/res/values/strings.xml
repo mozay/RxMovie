@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">clean-arch-mvvm-rxjava</string>
+    <string name="text_popular">Popular</string>
+    <string name="text_rated">Top Rated</string>
+    <string name="text_now">Now Playing</string>
+    <string name="error_message">Opps! Something went wrong</string>
+    <string name="pref_min">&#160; Min.</string>
+    <string name="bullet">&#160; \u2022 &#160;</string>
+</resources>

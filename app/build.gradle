@@ -1,0 +1,37 @@
+apply plugin: Plugins.androidApplication
+apply from: "$rootDir/base.gradle"
+
+dependencies {
+
+    // Support Libraries
+    implementation SupportLibraries.appCompat
+    api SupportLibraries.appCompat
+    api SupportLibraries.design
+    api SupportLibraries.recyclerView
+    api SupportLibraries.constraintLayout
+    api Libraries.lifecycleExtensions
+
+    //dagger
+    api Libraries.dagger2AndroidSupport
+
+    //retrofit
+    api Libraries.retrofit
+    api Libraries.logInterceptor
+    api Libraries.okHttp
+    api Libraries.gson
+    api Libraries.retrofitRxJavaAdapter
+
+    //rxjava
+    api Libraries.rxJava2
+    api Libraries.rxAndroid
+
+    //3rd-party other
+    api Libraries.circularImageView
+    api Libraries.glide
+
+    // Testing
+    testImplementation TestLibraries.jUnit
+    androidTestImplementation TestLibraries.runner
+    androidTestImplementation TestLibraries.espressoCore
+    androidTestImplementation TestLibraries.androidTestImplementation
+}

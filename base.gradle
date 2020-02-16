@@ -1,0 +1,55 @@
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinAndroidExtensions
+apply plugin: Plugins.kotlinKapt
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation CoreLibraries.kotlin
+    implementation Libraries.multiDex
+    kapt Libraries.dagger2Compiler
+    kapt Libraries.dagger2AndroidProcessor
+    kapt Libraries.glideKapt
+    testAnnotationProcessor Libraries.dagger2Compiler
+    compileOnly Libraries.javaxAnnotation
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'org.jetbrain.kotlin') {
+            details.userVersion Version.kotlinVersion
+        } else if (requested.group == 'com.android.support') {
+            details.userVersion Versions.appCompatVersion
+        }
+    }
+}
