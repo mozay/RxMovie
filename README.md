@@ -4,14 +4,15 @@ Android Sample Clean Architecture App (MVVM, RxJava, Dagger2, Jetpack)
 <p><img src="https://github.com/mozay/RxMovie/raw/master/art/appart.gif" alt="rxmovie" width="210"></p>  
 
 ### Technology Stack
-Uncle Bob's Clean Architecture<br>
-MVVM<br>
-Dagger2<br>
-RxJava2<br>
-Jetpack<br>
-Retrofit<br>
-Repository Pattern<br>
-Kotlin DSL<br>
+* [Uncle Bob's Clean Architecture](https://www.raywenderlich.com/3595916-clean-architecture-tutorial-for-android-getting-started)
+* [MVVM](https://developer.android.com/jetpack/docs/guide)
+* [Dagger2](https://github.com/google/dagger)
+* [RxJava2](https://github.com/ReactiveX/RxJava)
+* [Retrofit 2](https://square.github.io/retrofit/)
+* [Android Jetpack](https://developer.android.com/jetpack)
+* [Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
+* [Repository Pattern](https://proandroiddev.com/the-real-repository-pattern-in-android-efba8662b754)
+* [CircularImageView](https://github.com/lopspower/CircularImageView)
 
 ### License
 ```
